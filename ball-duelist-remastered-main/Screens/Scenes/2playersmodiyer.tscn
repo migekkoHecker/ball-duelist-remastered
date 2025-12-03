@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://b3xmbdkymtmgg"]
+
+[ext_resource type="Texture2D" uid="uid://d3r0jfpdl0vmf" path="res://Screens/Assets/Ball duelist 2players modifier or no modifier.png" id="1_sxf3t"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 2
+position = Vector2(574.5, 326)
+scale = Vector2(1.19479, 0.899988)
+texture = ExtResource("1_sxf3t")

@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://274rtfvnykep"]
+
+[ext_resource type="Script" path="res://Player/Character/Knight/Main_Attack/Main_AttackP1.gd" id="1_7kphl"]
+[ext_resource type="Texture2D" uid="uid://6s1178boomqw" path="res://Player/Character/Knight/Main_Attack/sword.png" id="2_7bcr2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qowjj"]
+size = Vector2(132.775, 251.259)
+
+[node name="Main_AttackP1" type="Node2D"]
+script = ExtResource("1_7kphl")
+damage = 4
+cooldown = 0.23
+
+[node name="Sword" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(88.9, 0.5)
+scale = Vector2(5.3, 5.3)
+texture = ExtResource("2_7bcr2")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(106.9, -0.999968)
+scale = Vector2(1.04688, 0.210938)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-16.7166, 4.74058)
+shape = SubResource("RectangleShape2D_qowjj")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

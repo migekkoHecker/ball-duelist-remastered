@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://dquxw56336m"]
+
+[ext_resource type="Script" path="res://Player/Character/Knight/Second_Attack/Second_AttackP1.gd" id="1_nflmo"]
+[ext_resource type="Texture2D" uid="uid://li5roysqffue" path="res://icon.svg" id="2_25qrq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jwc1r"]
+size = Vector2(56, 14)
+
+[node name="SuperAttackP1" type="Node2D"]
+script = ExtResource("1_nflmo")
+damage = 10
+life_time = 99.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -4.76837e-07)
+scale = Vector2(0.445313, 0.117188)
+texture = ExtResource("2_25qrq")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_jwc1r")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

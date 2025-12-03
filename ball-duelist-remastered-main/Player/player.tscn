@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=3 uid="uid://d155wm863e1j"]
+
+[ext_resource type="Script" path="res://Player/player.gd" id="1_cqgf2"]
+[ext_resource type="Texture2D" uid="uid://li5roysqffue" path="res://icon.svg" id="2_qy2bl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_li332"]
+size = Vector2(77, 74)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gpgdb"]
+size = Vector2(77, 46)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_cqgf2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.613281, 0.578125)
+texture = ExtResource("2_qy2bl")
+
+[node name="Sprite2D_Crouch" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, 13)
+scale = Vector2(0.605469, 0.367188)
+texture = ExtResource("2_qy2bl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_li332")
+
+[node name="CollisionShape2D_Crouch" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0, 14)
+shape = SubResource("RectangleShape2D_gpgdb")
+
+[node name="Character" type="Node2D" parent="."]
+
+[node name="HPLabel" type="Label" parent="."]
+offset_left = -21.75
+offset_top = -68.0
+offset_right = 18.25
+offset_bottom = -45.0
+
+[node name="SuperLabel" type="Label" parent="."]
+offset_left = -21.0
+offset_top = -108.0
+offset_right = 19.0
+offset_bottom = -85.0

@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://3v2vy0e3w0pd"]
+
+[ext_resource type="Texture2D" uid="uid://bp3fboty31axn" path="res://Screens/Assets/Ball duelist 2 or 4 players.png" id="1_c7di8"]
+[ext_resource type="Script" path="res://assets/Button4.gd" id="2_e47au"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(578, 324)
+scale = Vector2(1.20326, 0.9)
+texture = ExtResource("1_c7di8")
+
+[node name="Button6" type="Button" parent="Sprite2D"]
+offset_left = 157.0
+offset_top = 179.0
+offset_right = 344.0
+offset_bottom = 223.0
+
+[node name="Button5" type="Button" parent="Sprite2D"]
+offset_left = -330.0
+offset_top = 176.0
+offset_right = -141.0
+offset_bottom = 226.0
+
+[node name="Button4" type="Button" parent="Sprite2D"]
+offset_left = -466.0
+offset_top = -341.0
+offset_right = -364.0
+offset_bottom = -274.0
+script = ExtResource("2_e47au")

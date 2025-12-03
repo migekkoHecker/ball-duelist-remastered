@@ -1,0 +1,57 @@
+[gd_scene load_steps=6 format=3 uid="uid://ghr3hsioy7p1"]
+
+[ext_resource type="Texture2D" uid="uid://li5roysqffue" path="res://icon.svg" id="1_uaijf"]
+[ext_resource type="PackedScene" uid="uid://d155wm863e1j" path="res://Player/player.tscn" id="2_5ysnc"]
+[ext_resource type="Script" path="res://Maps/GameManager.gd" id="4_bpr5q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k6d56"]
+size = Vector2(839, 77)
+
+[sub_resource type="LabelSettings" id="LabelSettings_obcsj"]
+font_size = 100
+
+[node name="Map1" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(579.5, 545)
+scale = Vector2(6.55469, 0.609375)
+texture = ExtResource("1_uaijf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(581, 546)
+shape = SubResource("RectangleShape2D_k6d56")
+
+[node name="Player" parent="." node_paths=PackedStringArray("game_manager") instance=ExtResource("2_5ysnc")]
+position = Vector2(294, 398)
+enemy = NodePath("../Player2")
+player_id = 2
+game_manager = NodePath("../GameManager")
+
+[node name="Player2" parent="." node_paths=PackedStringArray("game_manager") instance=ExtResource("2_5ysnc")]
+position = Vector2(806, 399)
+character_name = "Gunman"
+enemy = NodePath("../Player")
+player_id = 1
+game_manager = NodePath("../GameManager")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="WinLabel" type="Label" parent="CanvasLayer"]
+visible = false
+offset_left = 1.0
+offset_top = 2.0
+offset_right = 1156.0
+offset_bottom = 652.0
+text = "test"
+label_settings = SubResource("LabelSettings_obcsj")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="GameManager" type="Node" parent="."]
+script = ExtResource("4_bpr5q")
+
+[node name="Player3" parent="." instance=ExtResource("2_5ysnc")]
+position = Vector2(1005, 168)
