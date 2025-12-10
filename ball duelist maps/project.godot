@@ -11,5 +11,5 @@ config_version=5
 [application]
 
 config/name="Ball duelist maps"
-run/main_scene="res://4player maps/4playermap_1.tscn"
+run/main_scene="res://loading screens/2or4players.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")

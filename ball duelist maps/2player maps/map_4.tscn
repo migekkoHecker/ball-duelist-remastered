@@ -1,10 +1,8 @@
-[gd_scene load_steps=23 format=3 uid="uid://c6bplkk61frjl"]
+[gd_scene load_steps=23 format=3 uid="uid://bvx6i8m821ydg"]
 
 [ext_resource type="Texture2D" uid="uid://c7be757ucsv80" path="res://2player maps/4.png" id="1_euqr0"]
 [ext_resource type="Texture2D" uid="uid://dj0agpt0pa4mv" path="res://special blocks/15.0 T.png" id="2_assq7"]
-[ext_resource type="Script" path="res://2player maps/Area2D.gd" id="3_xf0tp"]
 [ext_resource type="Texture2D" uid="uid://bd4u4h83jn5rd" path="res://special blocks/15.1 T.png" id="4_t7mrm"]
-[ext_resource type="Script" path="res://2player maps/Area2D_1.gd" id="5_t82bx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ctafl"]
 size = Vector2(18.4555, 373.246)
@@ -51,8 +49,52 @@ size = Vector2(11.1255, 47.7399)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xjexx"]
 size = Vector2(194.684, 20)
 
+[sub_resource type="GDScript" id="GDScript_f56gj"]
+script/source = "extends Area2D
+
+@export var target_position: Vector2
+@export var cooldown_time := 0.3
+
+var cooldown := false
+
+func _ready():
+	body_entered.connect(_on_body_entered)
+
+func _on_body_entered(body):
+	if cooldown:
+		return
+
+	body.global_position = target_position
+
+	cooldown = true
+	await get_tree().create_timer(cooldown_time).timeout
+	cooldown = false
+"
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jo2km"]
 height = 46.4
+
+[sub_resource type="GDScript" id="GDScript_x0rqe"]
+script/source = "extends Area2D
+
+@export var target_position: Vector2
+@export var cooldown_time := 0.3
+
+var cooldown := false
+
+func _ready():
+	body_entered.connect(_on_body_entered)
+
+func _on_body_entered(body):
+	if cooldown:
+		return
+
+	body.global_position = target_position
+
+	cooldown = true
+	await get_tree().create_timer(cooldown_time).timeout
+	cooldown = false
+"
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_smllm"]
 
@@ -131,7 +173,7 @@ scale = Vector2(1.25, 1.25)
 texture = ExtResource("2_assq7")
 
 [node name="Area2D" type="Area2D" parent="15_0T"]
-script = ExtResource("3_xf0tp")
+script = SubResource("GDScript_f56gj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="15_0T/Area2D"]
 shape = SubResource("CapsuleShape2D_jo2km")
@@ -142,7 +184,7 @@ scale = Vector2(1.25, 1.334)
 texture = ExtResource("4_t7mrm")
 
 [node name="Area2D" type="Area2D" parent="15_1T"]
-script = ExtResource("5_t82bx")
+script = SubResource("GDScript_x0rqe")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="15_1T/Area2D"]
 scale = Vector2(1, 1.50092)
