@@ -51,4 +51,4 @@ func player_died(player):
 
 func _return_to_main_menu():
 	print("[GameManager] Returning to Main Menu")
-	get_tree().change_scene_to_file("res://Main_Menu.tscn")
+	get_tree().change_scene_to_file("res://loading screens/homescreen.tscn")

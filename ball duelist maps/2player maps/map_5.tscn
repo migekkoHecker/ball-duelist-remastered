@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://tifrlilx6644" path="res://2player maps/5.png" id="1_5i4rg"]
 [ext_resource type="Texture2D" uid="uid://cuv45udrgenea" path="res://special blocks/6 .0 D W2.png" id="2_hcrnj"]
-[ext_resource type="Script" path="res://scripts/water.gd" id="3_1u7j5"]
+[ext_resource type="Script" uid="uid://cylsfjyd4m1oc" path="res://scripts/water.gd" id="3_1u7j5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rt2ch"]
 size = Vector2(18.5069, 370.053)
@@ -59,7 +59,7 @@ size = Vector2(8.13417, 37.3696)
 size = Vector2(84.814, 199.416)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nywhq"]
-size = Vector2(86.4742, 98.9556)
+size = Vector2(89.05271, 98.9556)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lwydm"]
 size = Vector2(83.2163, 169.598)
@@ -72,8 +72,8 @@ size = Vector2(79.501, 124.961)
 [node name="11" type="Sprite2D" parent="."]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(572, 322)
-scale = Vector2(2.23346, 1.68586)
+position = Vector2(577.5004, 322)
+scale = Vector2(2.2548623, 1.68586)
 texture = ExtResource("1_5i4rg")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="11"]
@@ -161,15 +161,16 @@ position = Vector2(-0.351242, -48.1394)
 shape = SubResource("RectangleShape2D_seynh")
 
 [node name="6_0DW5" type="Sprite2D" parent="water"]
-position = Vector2(942.625, 751.625)
-scale = Vector2(2.90294, 1.00753)
+position = Vector2(947.625, 751.625)
+scale = Vector2(3.0205874, 1.00753)
 texture = ExtResource("2_hcrnj")
 
 [node name="StaticBody2D" type="Area2D" parent="water/6_0DW5"]
 script = ExtResource("3_1u7j5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="water/6_0DW5/StaticBody2D"]
-position = Vector2(-0.215305, -100.866)
+position = Vector2(1.0739441, -100.86597)
+scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("RectangleShape2D_nywhq")
 
 [node name="6_0DW2" type="Sprite2D" parent="water"]

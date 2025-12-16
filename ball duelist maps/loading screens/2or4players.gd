@@ -10,7 +10,8 @@ const MAPS_2P: Array[String] = [
 
 # 4-player maps
 const MAPS_4P: Array[String] = [
-	"res://4player maps/4playermap_1.tscn",
+	
+	"res://4player maps/4playermap_2.tscn",
 ]
 
 func _ready():
@@ -39,9 +40,6 @@ func load_random_map(map_list: Array[String]):
 	else:
 		print("Failed to load scene:", path)
 
-
-
-
-
-func _on_button_2_pressed():
-	pass # Replace with function body.
+func _on_button_3_pressed():
+	print("going back...")
+	get_tree().change_scene_to_file("res://loading screens/homescreen.tscn")

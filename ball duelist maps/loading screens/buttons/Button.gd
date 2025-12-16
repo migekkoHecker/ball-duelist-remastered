@@ -2,11 +2,7 @@ extends Button
 
 # List all your map scene paths here
 const MAPS := [
-	"res://map_2.tscn",
-	"res://map_3.tscn",
-	"res://map_4.tscn",
-	"res://map_5.tscn",
-	"res://map_6.tscn",
+	"res://4player maps/4playermap_1.tscn",
 ]
 
 func _ready():
@@ -19,4 +15,3 @@ func load_random_map():
 	var random_map_path = MAPS[randi() % MAPS.size()]
 	var scene = load(random_map_path)
 	get_tree().change_scene_to_packed(scene)
-	

@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://k5iy0s34wk40"]
+
+[ext_resource type="Texture2D" uid="uid://lh6s60sbkuda" path="res://loading screens/homecreen ball duelist (1).png" id="1_62fs4"]
+[ext_resource type="Script" uid="uid://b0eoh57pjcsjw" path="res://loading screens/button_4.gd" id="2_j7u36"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="HomecreenBallDuelist(1)" type="Sprite2D" parent="."]
+position = Vector2(575.5, 320.5)
+scale = Vector2(1.203125, 0.9013889)
+texture = ExtResource("1_62fs4")
+
+[node name="Button4" type="Button" parent="."]
+offset_left = 248.0
+offset_top = 245.0
+offset_right = 912.0
+offset_bottom = 420.0
+flat = true
+script = ExtResource("2_j7u36")
+
+[node name="Button5" type="Button" parent="."]
+offset_left = 247.0
+offset_top = 478.0
+offset_right = 577.0
+offset_bottom = 629.0
+
+[node name="Button6" type="Button" parent="."]
+offset_left = 586.0
+offset_top = 472.0
+offset_right = 913.0
+offset_bottom = 630.0

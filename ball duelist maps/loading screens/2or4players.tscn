@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bjd233hvyn4rn"]
+[gd_scene load_steps=3 format=3 uid="uid://bjd233hvyn4rn"]
 
 [ext_resource type="Texture2D" uid="uid://y4n53epl4nlh" path="res://loading screens/Ball duelist 2 or 4 players (1).png" id="1_w48kb"]
-[ext_resource type="Script" path="res://loading screens/2or4players.gd" id="1_wv67c"]
-[ext_resource type="Script" path="res://loading screens/Button3.gd" id="3_1m5xx"]
+[ext_resource type="Script" uid="uid://t130vhl5ni55" path="res://loading screens/2or4players.gd" id="1_wv67c"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_wv67c")
@@ -27,13 +26,12 @@ offset_bottom = 528.0
 flat = true
 
 [node name="Button3" type="Button" parent="."]
-offset_left = 19.9554
-offset_top = 18.8305
-offset_right = 119.955
-offset_bottom = 82.8305
-disabled = true
+offset_left = 23.0
+offset_top = 12.0
+offset_right = 141.0446
+offset_bottom = 76.0
 flat = true
-script = ExtResource("3_1m5xx")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]

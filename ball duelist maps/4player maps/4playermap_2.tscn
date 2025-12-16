@@ -1,0 +1,195 @@
+[gd_scene load_steps=17 format=3 uid="uid://dv6qpgtkxahs5"]
+
+[ext_resource type="Texture2D" uid="uid://cnoeix573mq71" path="res://4player maps/4player map_2 (1).png" id="1_enwl2"]
+[ext_resource type="Texture2D" uid="uid://cuv45udrgenea" path="res://special blocks/6 .0 D W2.png" id="2_2aw3x"]
+[ext_resource type="Script" uid="uid://c8o5tlqh7n477" path="res://4player maps/static_body_2d.gd" id="3_dot78"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2aw3x"]
+size = Vector2(85.16708, 135.79782)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dot78"]
+size = Vector2(910, 37)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d5i3m"]
+size = Vector2(1172.5, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wo1vn"]
+size = Vector2(66, 797)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ln45e"]
+size = Vector2(423, 751.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h2otj"]
+size = Vector2(1544, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rnv1t"]
+size = Vector2(171.75, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j7qki"]
+size = Vector2(1119, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0sll2"]
+size = Vector2(169.5, 44)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nt3hg"]
+size = Vector2(173, 45)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1pa6q"]
+size = Vector2(176.5, 46)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bm1la"]
+size = Vector2(174, 137)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_do8s7"]
+size = Vector2(171.75, 140)
+
+[node name="Node2D" type="Node2D"]
+scale = Vector2(0.65200716, 0.90375006)
+
+[node name="4PlayerMap2(1)" type="Sprite2D" parent="."]
+position = Vector2(871.00006, 371)
+scale = Vector2(1.1819685, 1.1867087)
+texture = ExtResource("1_enwl2")
+
+[node name="water" type="Node2D" parent="."]
+
+[node name="6_0DW2" type="Sprite2D" parent="water"]
+texture_filter = 2
+position = Vector2(867, 931.51953)
+scale = Vector2(2.3294125, 1.7225385)
+texture = ExtResource("2_2aw3x")
+
+[node name="StaticBody2D" type="Area2D" parent="water/6_0DW2"]
+script = ExtResource("3_dot78")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="water/6_0DW2/StaticBody2D"]
+position = Vector2(0.62242126, -81.111786)
+scale = Vector2(0.9999999, 1)
+shape = SubResource("RectangleShape2D_2aw3x")
+
+[node name="6_0DW3" type="Sprite2D" parent="water"]
+texture_filter = 2
+position = Vector2(869, -182.00002)
+rotation = 3.1415927
+scale = Vector2(2.3294125, 1.7225385)
+texture = ExtResource("2_2aw3x")
+
+[node name="StaticBody2D" type="Area2D" parent="water/6_0DW3"]
+position = Vector2(2.9802322e-08, 0.58057404)
+script = ExtResource("3_dot78")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="water/6_0DW3/StaticBody2D"]
+position = Vector2(-0.42929885, -81.27541)
+scale = Vector2(0.9999999, 1)
+shape = SubResource("RectangleShape2D_2aw3x")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(294, 750.5)
+shape = SubResource("RectangleShape2D_dot78")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(187, 6)
+shape = SubResource("RectangleShape2D_d5i3m")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-40, 377)
+shape = SubResource("RectangleShape2D_wo1vn")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1977, 373.25)
+shape = SubResource("RectangleShape2D_ln45e")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1756, 734)
+shape = SubResource("RectangleShape2D_h2otj")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(160.125, 194)
+shape = SubResource("RectangleShape2D_rnv1t")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1542, -2)
+shape = SubResource("RectangleShape2D_j7qki")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(161.25, 560)
+shape = SubResource("RectangleShape2D_0sll2")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1582.5, 193.5)
+shape = SubResource("RectangleShape2D_nt3hg")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1583.25, 535)
+shape = SubResource("RectangleShape2D_1pa6q")
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(595, 372.5)
+shape = SubResource("RectangleShape2D_bm1la")
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1142.125, 370)
+shape = SubResource("RectangleShape2D_do8s7")
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(1289, 408.99994)
+rotation = -3.1415927
+scale = Vector2(0.22295865, 0.3074128)
+polygon = PackedVector2Array(260.5227, -107.13031, -203.02417, 127.150635, 265.1123, 341.35046)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+scale = Vector2(208.53099, -123.22103)
+polygon = PackedVector2Array(1.9517483, -3.002734, 2.4312932, -2.4508803, 2.426498, -3.570819)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(2011.1729, -197.81274)
+scale = Vector2(0.16495317, 0.4075537)
+polygon = PackedVector2Array(-1485.3374, 2020.4456, -1948.8843, 2254.7266, -1480.7476, 2468.9265)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(1812, -295)
+scale = Vector2(0.027209548, 0.16610003)
+polygon = PackedVector2Array(-1653.8281, 1812.1606, -3417.914, 1806.14, -4851.2344, 1800.1194, -1617.0742, 2474.412)
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(32.999878, 309.9999)
+scale = Vector2(0.027209548, 0.16610003)
+polygon = PackedVector2Array(-1485.3374, 2020.4456, 1176.0576, 2546.6592, -1506.824, 2528.5972)
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(0.14567947, 270.3909)
+scale = Vector2(0.0044883015, 0.06769468)
+polygon = PackedVector2Array(-1653.8281, 1812.1606, -3417.914, 1806.14, -4851.2344, 1800.1194, -1617.0742, 2474.412)
+
+[node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(-3.4193811, -175.14273)
+scale = Vector2(0.00074035954, 0.027589217)
+polygon = PackedVector2Array(-1653.8281, 1812.1606, -3417.914, 1806.14, -4851.2344, 1800.1194, -1617.0742, 2474.412)
+
+[node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(2.0000267, -158.99994)
+scale = Vector2(0.0044883015, 0.06769468)
+polygon = PackedVector2Array(-1559.6343, 3707.8237, 12922.465, 2555.5933, -1506.824, 2528.5972)
+
+[node name="CollisionPolygon2D9" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(689, 43)
+scale = Vector2(14.285714, 10.7)
+polygon = PackedVector2Array(-4.130001, -2.3364487, -2.3099976, 6.82243, 6.299999, 6.82243, 4.6900024, -2.5233645)
+
+[node name="CollisionPolygon2D10" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(1071, 50.999985)
+rotation = 1.8254392
+scale = Vector2(14.285714, 10.7)
+polygon = PackedVector2Array(-4.215377, -2.4033432, -2.1945686, 8.778145, 6.3957996, 8.689972, 4.1239386, -2.5920105)
+
+[node name="CollisionPolygon2D11" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(1138, 375.00006)
+scale = Vector2(437.84814, -203.92726)
+polygon = PackedVector2Array(-1.1625035, -1.7212019, -1.1031221, -1.2308309, -0.8199189, -1.2308309, -0.88158417, -1.7604315, -1.1647873, -1.7506242)
+
+[node name="CollisionPolygon2D12" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(1033, 663)
+scale = Vector2(10.2, 8.399998)
+polygon = PackedVector2Array(7.254898, 7.1428604, 4.705879, -4.642853, -7.549019, -4.5238113, -4.9019623, 7.738098)

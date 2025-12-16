@@ -1,0 +1,59 @@
+[gd_scene load_steps=7 format=3 uid="uid://dltss1lk5w6hb"]
+
+[ext_resource type="Texture2D" uid="uid://cnoeix573mq71" path="res://4player maps/4player map_2 (1).png" id="1_vlqid"]
+[ext_resource type="Texture2D" uid="uid://cuv45udrgenea" path="res://special blocks/6 .0 D W2.png" id="2_j5hq1"]
+[ext_resource type="Script" uid="uid://c8o5tlqh7n477" path="res://4player maps/static_body_2d.gd" id="3_8ekfw"]
+[ext_resource type="Texture2D" uid="uid://bidjri51o0ytg" path="res://scripts/ball1 (1) (1).png" id="4_taw4v"]
+[ext_resource type="Texture2D" uid="uid://xuksvt6v3h3j" path="res://scripts/ball1 (4).png" id="5_ila7e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2aw3x"]
+size = Vector2(85.16708, 135.79782)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="4PlayerMap2(1)" type="Sprite2D" parent="."]
+position = Vector2(871.00006, 371)
+scale = Vector2(1.1819685, 1.1867087)
+texture = ExtResource("1_vlqid")
+
+[node name="water" type="Node2D" parent="."]
+
+[node name="6_0DW2" type="Sprite2D" parent="water"]
+texture_filter = 2
+position = Vector2(867, 931.51953)
+scale = Vector2(2.3294125, 1.7225385)
+texture = ExtResource("2_j5hq1")
+
+[node name="StaticBody2D" type="Area2D" parent="water/6_0DW2"]
+script = ExtResource("3_8ekfw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="water/6_0DW2/StaticBody2D"]
+position = Vector2(0.62242126, -81.111786)
+scale = Vector2(0.9999999, 1)
+shape = SubResource("RectangleShape2D_2aw3x")
+
+[node name="6_0DW3" type="Sprite2D" parent="water"]
+texture_filter = 2
+position = Vector2(869, -182.00002)
+rotation = 3.1415927
+scale = Vector2(2.3294125, 1.7225385)
+texture = ExtResource("2_j5hq1")
+
+[node name="StaticBody2D" type="Area2D" parent="water/6_0DW3"]
+position = Vector2(2.9802322e-08, 0.58057404)
+script = ExtResource("3_8ekfw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="water/6_0DW3/StaticBody2D"]
+position = Vector2(-0.42929885, -81.27541)
+scale = Vector2(0.9999999, 1)
+shape = SubResource("RectangleShape2D_2aw3x")
+
+[node name="players" type="Node2D" parent="."]
+
+[node name="player1" type="Sprite2D" parent="players"]
+position = Vector2(169, 490)
+texture = ExtResource("4_taw4v")
+
+[node name="player2" type="Sprite2D" parent="players"]
+position = Vector2(1598, 463)
+texture = ExtResource("5_ila7e")
